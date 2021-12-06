@@ -41,6 +41,10 @@ h2 {
     line-height: 1.9rem;
     }
 
+a {
+  color: var(--lightGrey);
+}
+
 
 #sidebar{
     position:fixed;

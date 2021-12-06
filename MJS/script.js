@@ -36,27 +36,27 @@ Composite.add(engine.world, [boxA, boxB, ground]);
 /// ----------------------- MY CODE ---------------- ///
 
 
-svg.makeLine({
+svg.makeShape({
     parent: dom.svgLayer,
     color: "#000",
     id: "testBox",
     d: svg.path([ 
-        {x: boxA.position.x/canvas.res, y: boxA.position.y/canvas.res} , 
-        {x: boxA.position.x/canvas.res +10, y: boxA.position.y/canvas.res}  ,
-        {x: boxA.position.x/canvas.res +10, y: boxA.position.y/canvas.res+10} ,
-        {x: boxA.position.x/canvas.res, y: boxA.position.y/canvas.res +10 } 
+        {x: boxA.vertices[0].x/canvas.res, y: boxA.vertices[0].y/canvas.res} , 
+        {x: boxA.vertices[1].x/canvas.res, y: boxA.vertices[1].y/canvas.res} ,
+        {x: boxA.vertices[2].x/canvas.res, y: boxA.vertices[2].y/canvas.res}  ,
+        {x: boxA.vertices[3].x/canvas.res, y: boxA.vertices[3].y/canvas.res} 
         ] )
 })
 
-svg.makeLine({
+svg.makeShape({
     parent: dom.svgLayer,
     color: "#000",
     id: "testBox2",
     d: svg.path([ 
-        {x: boxB.position.x/canvas.res, y: boxB.position.y/canvas.res} , 
-        {x: boxB.position.x/canvas.res +10, y: boxB.position.y/canvas.res}  ,
-        {x: boxB.position.x/canvas.res +10, y: boxB.position.y/canvas.res+10} ,
-        {x: boxB.position.x/canvas.res, y: boxB.position.y/canvas.res +10 } 
+        {x: boxB.vertices[0].x/canvas.res, y: boxB.vertices[0].y/canvas.res} , 
+        {x: boxB.vertices[1].x/canvas.res, y: boxB.vertices[1].y/canvas.res} ,
+        {x: boxB.vertices[2].x/canvas.res, y: boxB.vertices[2].y/canvas.res}  ,
+        {x: boxB.vertices[3].x/canvas.res, y: boxB.vertices[3].y/canvas.res} 
         ] )
 })
 
@@ -64,18 +64,18 @@ svg.makeLine({
 function loop(time) {
     dom["testBox"].setAttributeNS(null, "d",  
     svg.path([ 
-        {x: boxA.position.x/canvas.res, y: boxA.position.y/canvas.res} , 
-        {x: boxA.position.x/canvas.res +10, y: boxA.position.y/canvas.res}  ,
-        {x: boxA.position.x/canvas.res +10, y: boxA.position.y/canvas.res+10} ,
-        {x: boxA.position.x/canvas.res, y: boxA.position.y/canvas.res +10 } 
+        {x: boxA.vertices[0].x/canvas.res, y: boxA.vertices[0].y/canvas.res} , 
+        {x: boxA.vertices[1].x/canvas.res, y: boxA.vertices[1].y/canvas.res} ,
+        {x: boxA.vertices[2].x/canvas.res, y: boxA.vertices[2].y/canvas.res}  ,
+        {x: boxA.vertices[3].x/canvas.res, y: boxA.vertices[3].y/canvas.res}
         ] ) )
 
         dom["testBox2"].setAttributeNS(null, "d",  
         svg.path([ 
-            {x: boxB.position.x/canvas.res, y: boxB.position.y/canvas.res} , 
-            {x: boxB.position.x/canvas.res +10, y: boxB.position.y/canvas.res}  ,
-            {x: boxB.position.x/canvas.res +10, y: boxB.position.y/canvas.res+10} ,
-            {x: boxB.position.x/canvas.res, y: boxB.position.y/canvas.res +10 } 
+            {x: boxB.vertices[0].x/canvas.res, y: boxB.vertices[0].y/canvas.res} , 
+            {x: boxB.vertices[1].x/canvas.res, y: boxB.vertices[1].y/canvas.res} ,
+            {x: boxB.vertices[2].x/canvas.res, y: boxB.vertices[2].y/canvas.res}  ,
+            {x: boxB.vertices[3].x/canvas.res, y: boxB.vertices[3].y/canvas.res} 
             ] ) )
     requestAnimationFrame(loop)
 }
